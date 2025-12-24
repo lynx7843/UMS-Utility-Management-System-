@@ -27,6 +27,7 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 * **👥 Multi-Role Access:** Dedicated portals for Admins, Service Providers, and End-Users.
 * **🧾 Smart Billing:** Automated bill generation and tracking.
 * **📊 Dashboard Analytics:** Real-time overview of usage and payment status.
+* **🧾 Triggers:** SQL triggers allows for the higher level staff to make changers to large amount of data at once.
 
 ## ⚙️ Tech Stacks
 
