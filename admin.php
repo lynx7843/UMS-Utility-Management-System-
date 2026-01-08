@@ -13,8 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $fn = $_POST['full_name'];
     $r = $_POST['role'];
     $addr = $_POST['address'];
-    $phone = $_POST['phone_number']; // newest change
-
+    $phone = $_POST['phone_number']; 
     try {
         $pdo->beginTransaction();
 
@@ -53,10 +52,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <label>Role</label>
                 <select name="role" id="role" onchange="toggleFields()">
-                    <option value="customer">Customer</option>
-                    <option value="field_officer">Field Officer</option>
-                    <option value="cashier">Cashier</option>
-                    <option value="manager">Manager</option>
+                    <option value="customer" style="background-color: #2a2a2c; color: #ffffff;">Customer</option>
+                    <option value="field_officer" style="background-color: #2a2a2c; color: #ffffff;">Field Officer</option>
+                    <option value="cashier" style="background-color: #2a2a2c; color: #ffffff;">Cashier</option>
+                    <option value="manager" style="background-color: #2a2a2c; color: #ffffff;">Manager</option>
                 </select>
             </div>
             <div class="form-group"><label>Full Name</label><input type="text" name="full_name" required></div>
@@ -70,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <button class="btn">Register</button>
         </form>
+        
     </div>
     <script>
         function toggleFields() {
