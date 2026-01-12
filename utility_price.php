@@ -52,9 +52,9 @@ $utilities = $pdo->query($sql)->fetchAll();
             <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
         <?php endif; ?>
 
-        <div style="margin-top:30px; solid white; padding:10px;">
+        <div style="margin-top:30px; color:white; padding:10px;">
             <table style="width:100%; border-collapse:collapse; color:white;">
-                <tr style="background:#333;solid white;">
+                <tr style="background:#333;color: solid white;">
                     <th style="padding:15px; text-align:left;">Utility ID</th>
                     <th style="padding:15px; text-align:left;">Utility Type</th>
                     <th style="padding:15px; text-align:right;">Unit Rate (LKR)</th>
@@ -80,7 +80,7 @@ $utilities = $pdo->query($sql)->fetchAll();
             </table>
         </div>
 
-               <div id="editModal" style="display:none; margin-top:30px; border:1px solid #white; padding:20px;">
+               <div id="editModal" style="display:none; margin-top:30px; border:1px solid white; padding:20px;">
             <h3 style="margin-top:0;">Update Utility Rate</h3>
             <form method="POST">
                 <input type="hidden" name="utility_id" id="edit_utility_id">

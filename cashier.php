@@ -42,8 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <label>Payment Method</label>
                 <select name="method">
-                    <option>Cash</option>
-                    <option>Card</option>
+                    <option style="background-color: #2a2a2c; color: #ffffff;">Cash</option>
+                    <option style="background-color: #2a2a2c; color: #ffffff;">Card</option>
                 </select>
             </div>
             <button class="btn">Process Payment</button>

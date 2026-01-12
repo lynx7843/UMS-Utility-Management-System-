@@ -40,7 +40,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = "Full name and username are required.";
     } else {
         try {
-            // Check if username already exists for another user
             $checkSql = "SELECT user_id FROM Users WHERE username = :username AND user_id != :user_id";
             $checkStmt = $pdo->prepare($checkSql);
             $checkStmt->execute(['username' => $username, 'user_id' => $customer['user_id']]);
@@ -48,9 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($checkStmt->fetch()) {
                 $error = "Username already exists. Please choose another.";
             } else {
-                // Update user details with or without password
                 if (!empty($password)) {
-                    // Update with new password
                     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
                     $updateUserSql = "UPDATE Users 
                                       SET full_name = :full_name, 
@@ -65,7 +62,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         'user_id' => $customer['user_id']
                     ]);
                 } else {
-                    // Update without changing password
                     $updateUserSql = "UPDATE Users 
                                       SET full_name = :full_name, 
                                           username = :username 
@@ -78,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ]);
                 }
 
-                // Update customer details
                 $updateCustSql = "UPDATE Customers SET phone_number = :phone_number, address = :address WHERE customer_id = :customer_id";
                 $stmtCust = $pdo->prepare($updateCustSql);
                 $stmtCust->execute([
@@ -89,7 +84,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 $success = "Customer details updated successfully!";
                 
-                // Refresh customer data
                 $stmt->execute(['account_number' => $account_number]);
                 $customer = $stmt->fetch();
             }
@@ -119,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
     <?php endif; ?>
 
-    <form method="POST" style="margin-top:30px; solid white; padding:20px;">
+    <form method="POST" style="margin-top:30px; color: solid white; padding:20px;">
         <div style="margin-bottom:20px;">
             <label>Account Number (Read-only)</label>
             <input type="text" value="<?php echo htmlspecialchars($customer['account_number']); ?>" disabled style="background-color:#555; cursor:not-allowed;">

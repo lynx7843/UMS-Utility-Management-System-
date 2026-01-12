@@ -10,7 +10,7 @@ if (strtolower($role) !== 'cashier') {
 
 $results = [];
 $search = "";
-$criteria = "name"; // default criteria
+$criteria = "name";
 
 if (isset($_GET['search'])) {
     $search = trim($_GET['search']);
@@ -64,15 +64,15 @@ if (isset($_GET['search'])) {
         <?php include 'nav.php'; ?>
         <h2>Find Customer Details</h2>
         
-        <form method="GET" style="margin-bottom:30px; border:1px solid white; padding:20px;">
+        <form method="GET" style="margin-bottom:30px;color: solid white; padding:20px;">
             <div style="display:flex; gap:10px; align-items:flex-end;">
                 <div style="flex:1;">
                     <label>Search By</label>
                     <select name="criteria" style="height:45px;">
-                        <option value="name" <?php if($criteria=='name') echo 'selected'; ?>>Customer Name</option>
-                        <option value="address" <?php if($criteria=='address') echo 'selected'; ?>>Address</option>
-                        <option value="phone" <?php if($criteria=='phone') echo 'selected'; ?>>Phone Number</option>
-                        <option value="account" <?php if($criteria=='account') echo 'selected'; ?>>Account Number</option>
+                        <option value="name" style="background-color: #2a2a2c; color: #ffffff;"<?php if($criteria=='name') echo 'selected'; ?>>Customer Name</option>
+                        <option value="address" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='address') echo 'selected'; ?>>Address</option>
+                        <option value="phone" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='phone') echo 'selected'; ?>>Phone Number</option>
+                        <option value="account" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='account') echo 'selected'; ?>>Account Number</option>
                     </select>
                 </div>
                 <div style="flex:2;">
@@ -87,8 +87,8 @@ if (isset($_GET['search'])) {
 
         <?php if(!empty($results)): ?>
             <h3>Search Results</h3>
-            <div style="border:1px solid white; padding:10px;">
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 120px; border-bottom:1px solid white; font-weight:bold; padding:5px;">
+            <div style=" color: solid white; padding:10px;">
+                <div style="display:grid; background:#333; grid-template-columns:1fr 1fr 1fr 1fr 120px; color: solid white; font-weight:bold; padding:5px;">
                     <div>Name</div>
                     <div>Account #</div>
                     <div>Address / Phone</div>

@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once 'db.php';
-if ($_SESSION['role'] != 'manager') { header("Location: login.php"); exit; }
+if ($_SESSION['role'] != 'manager' && $_SESSION['role'] != 'admin') { header("Location: login.php"); exit; }
 
-$staffSql = "SELECT full_name, role, username FROM Users WHERE role != 'customer' ORDER BY role";
+$staffSql = "SELECT user_id, full_name, role, username FROM Users WHERE role != 'customer' ORDER BY role";
 $staff = $pdo->query($staffSql)->fetchAll();
 ?>
 <!DOCTYPE html>
@@ -19,12 +19,16 @@ $staff = $pdo->query($staffSql)->fetchAll();
                     <th style="padding:10px;">Job Title</th>
                     <th style="padding:10px;">Name</th>
                     <th style="padding:10px;">Username</th>
+                    <th style="padding:10px;">Action</th>
                 </tr>
                 <?php foreach($staff as $s): ?>
                 <tr>
                     <td style="padding:10px; text-transform:uppercase;"><?php echo str_replace('_', ' ', $s['role']); ?></td>
                     <td style="padding:10px;"><?php echo $s['full_name']; ?></td>
                     <td style="padding:10px;"><?php echo $s['username']; ?></td>
+                    <td style="padding:10px;">
+                        <a href="edit_staff.php?id=<?php echo $s['user_id']; ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;color:white;padding:5px 10px; border-radius:5px;">Edit</a>
+                    </td>
                 </tr>
                 <?php endforeach; ?>
             </table>

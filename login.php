@@ -6,7 +6,7 @@ $error = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $user = $_POST['username'];
     $pass = $_POST['password'];
-    $type = $_POST['login_type']; // customer or staff
+    $type = $_POST['login_type'];
 
     $stmt = $pdo->prepare("SELECT * FROM Users WHERE username = ?");
     $stmt->execute([$user]);
@@ -18,12 +18,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         } elseif ($type === 'staff' && $row['role'] === 'customer') {
             $error = "Access Denied: Please use Customer Login.";
         } else {
-            // success
+           
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['username'] = $row['username'];
             $_SESSION['role'] = $row['role'];
 
-            // redirect
+            
             if ($row['role'] == 'manager') header("Location: manager.php");
             elseif ($row['role'] == 'admin') header("Location: admin.php");
             elseif ($row['role'] == 'field_officer') header("Location: meter_reading.php");

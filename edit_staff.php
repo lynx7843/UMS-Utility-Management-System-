@@ -113,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
     <?php endif; ?>
 
-    <form method="POST" style="margin-top:30px; solid white; padding:20px;">
+    <form method="POST" style="margin-top:30px; color: solid white; padding:20px;">
         <div style="margin-bottom:20px;">
             <label for="full_name">Full Name *</label>
             <input type="text" id="full_name" name="full_name" value="<?php echo htmlspecialchars($staff['full_name']); ?>" required>
