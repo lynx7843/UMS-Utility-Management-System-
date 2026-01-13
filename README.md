@@ -50,6 +50,7 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 ```bash
 localhost\UMS-Utility-Management-System-
 
+
 ## 📷 Screenshots
 
 | Login | Customer Dashboard |
@@ -75,3 +76,13 @@ localhost\UMS-Utility-Management-System-
 | Staff List Menu | Customer List Menu |
 |-------------|---------|
 | ![](img/11.png) | ![](img/12.png) |
+
+
+## 🤝 Contributors
+
+- [Samitha Kahawita](https://github.com/kdsmaduranga) - Database Configuration
+- [Dilan Amantha](https://github.com/lynx7843) - Frontend
+- [tmadulanjaya](https://github.com/tmadulanjaya) - Database Designing
+
+## 📄 License
+This project is licensed under the Apache-2.0 License.
