@@ -48,7 +48,7 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 ## 🔥 Initial SetUp
 
 * **Prerequisites:** Microsoft SQL Server, IDE, XAMPP, <a href="https://learn.microsoft.com/en-us/sql/connect/odbc/download-odbc-driver-for-sql-server?view=sql-server-ver17">ODBC Drivers</a>
-* Put the relevent .dll files at the xampp/php/ext for the website to access database.
+* Put the relevent .dll files at the **xampp/php/ext** for the website to access database.
 * Put the program files at **xampp/htdocs** folder.
 * **Import the backup file (.bak)** using SQL Server Management Studio.
 * Copy the server name from connection menu in Microsoft SQL server and replace the **servername** at **db.php**.
