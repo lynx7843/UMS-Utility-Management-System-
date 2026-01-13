@@ -7,10 +7,13 @@
   </p>
   
   <h4>
-    <a href="#about">About</a> •
-    <a href="#features">Features</a> •
-    <a href="#tech-stack">Tech Stack</a> •
-    <a href="#setup">Initial SetUp</a>
+    <a href="#-about">About</a> •
+    <a href="#-features">Features</a> •
+    <a href="#-tech-stack">Tech Stacks</a> •
+    <a href="#-initial-setup">Initial SetUp</a> •
+    <a href="#-screenshots">Screenshots</a> •
+    <a href="#-contributors">Contributors</a> •
+    <a href="#-license">License</a>
   </h4>
 </div>
 
@@ -22,6 +25,7 @@
 
 Managing utility bills and accounting can be complex. UMS simplifies this by offering a centralized platform that handles everything from billing cycles to user payments. Built using a robust and widely-accessible technology stack, this system ensures a seamless efficient experience for all stakeholders.
 
+
 ## ✨ Features
 
 * **👥 Multi-Role Access:** Dedicated portals for Admins, Service Providers, and End-Users.
@@ -30,6 +34,8 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 * **👷 Complaint Management:** Allows for sending complaints regarding utility break downs and other distruptions.
 * **🤖 Automatic Interest Calculations:** Allows for applying and tracking late fees. 
 * **🧾 Triggers:** SQL triggers allows for the higher level staff to make changers to large amount of data at once.
+
+
 
 ## ⚙️ Tech Stacks
 
@@ -83,6 +89,7 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 - [Samitha Kahawita](https://github.com/kdsmaduranga) - Database Configuration
 - [Dilan Amantha](https://github.com/lynx7843) - Frontend
 - [tmadulanjaya](https://github.com/tmadulanjaya) - Database Designing
+
 
 ## 📄 License
 This project is licensed under the Apache-2.0 License.
