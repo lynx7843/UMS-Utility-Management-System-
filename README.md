@@ -52,7 +52,7 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 * Put the program files at **xampp/htdocs** folder.
 * **Import the backup file (.bak)** using SQL Server Management Studio.
 * Copy the server name from connection menu in Microsoft SQL server and replace the **servername** at **db.php**.
-* Access the website using the following link:
+* Access the website using the following link:-
 	```bash
 	localhost\UMS-Utility-Management-System-
 
