@@ -1,5 +1,5 @@
 <?php
-$serverName = "ASHEN\SQLEXPRESS";
+$serverName = "DILAN\SQLEXPRESS";
 $database = "UtilitySys_New";
 $uid = "";
 $pwd = "";

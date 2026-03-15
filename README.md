@@ -13,7 +13,6 @@
     <a href="#-initial-setup">Initial SetUp</a> •
     <a href="#-screenshots">Screenshots</a> •
     <a href="#-contributors">Contributors</a> •
-    <a href="#-license">License</a>
   </h4>
 </div>
 
@@ -90,6 +89,3 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 - [Dilan Amantha](https://github.com/lynx7843) - Frontend
 - [tmadulanjaya](https://github.com/tmadulanjaya) - Database Designing
 
-
-## 📄 License
-This project is licensed under the Apache-2.0 License.
