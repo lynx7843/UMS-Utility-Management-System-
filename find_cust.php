@@ -87,8 +87,8 @@ if (isset($_GET['search'])) {
 
         <?php if(!empty($results)): ?>
             <h3>Search Results</h3>
-            <div style=" color: solid white; padding:10px;">
-                <div style="display:grid; background:#333; grid-template-columns:1fr 1fr 1fr 1fr 120px; color: solid white; font-weight:bold; padding:5px;">
+            <div style=" color: white; padding:10px;">
+                <div style="display:grid; background:#333; grid-template-columns:1fr 1fr 1fr 1fr 120px; color: white; font-weight:bold; padding:5px;">
                     <div>Name</div>
                     <div>Account #</div>
                     <div>Address / Phone</div>
@@ -106,9 +106,9 @@ if (isset($_GET['search'])) {
                     <div style="font-weight:bold;">
                         <?php 
                         if ($row['balance'] > 0) {
-                            echo "<span style='color:#ff9999'>Outstanding: " . number_format($row['balance'], 2) . "</span>";
+                            echo "<span style='color:#ffffff'>Outstanding: " . number_format($row['balance'], 2) . "</span>";
                         } elseif ($row['balance'] < 0) {
-                            echo "<span style='color:#99ff99'>Exceeding: " . number_format(abs($row['balance']), 2) . "</span>";
+                            echo "<span style='color:#ffffff'>Exceeding: " . number_format(abs($row['balance']), 2) . "</span>";
                         } else {
                             echo "Settled";
                         }

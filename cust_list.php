@@ -41,13 +41,13 @@ $customers = $pdo->query($custSql)->fetchAll();
         <?php include 'nav.php'; ?>
         <h2>Customer Financial Report</h2>
         
-        <div style="margin-bottom:20px; padding:10px; background:#1a1a1a; color: solid #666;">
+        <div style="margin-bottom:20px; padding:10px; background:#1a1a1a; color: white;">
             <strong>Total Customers :</strong> <?php echo count($customers); ?>
         </div>
 
         <div class="grid" style="grid-template-columns: 1fr;">
             <table  style="width:100%; border-collapse:collapse; color:white;">
-                <tr style="background:#333;">
+                <tr style="background:#333333;">
                     <th style="padding:10px;">Account #</th>
                     <th style="padding:10px;">Customer Name</th>
                     <th style="padding:10px;">Phone</th>
@@ -64,11 +64,11 @@ $customers = $pdo->query($custSql)->fetchAll();
                     <td style="padding:10px; font-weight:bold;">
                         <?php 
                         if ($c['balance'] > 0) {
-                            echo "<span style='color:#ff9999'>OUTSTANDING: " . number_format($c['balance'], 2) . "</span>";
+                            echo "<span style='color:#ffffff'>OUTSTANDING: " . number_format($c['balance'], 2) . "</span>";
                         } elseif ($c['balance'] < 0) {
-                            echo "<span style='color:#99ff99'>EXCEEDING: " . number_format(abs($c['balance']), 2) . "</span>";
+                            echo "<span style='color:#ffffff'>EXCEEDING: " . number_format(abs($c['balance']), 2) . "</span>";
                         } else {
-                            echo "<span style='color:#9999ff'>Settled (0.00)</span>";
+                            echo "<span style='color:#ffffff'>Settled (0.00)</span>";
                         }
                         ?>
                     </td>

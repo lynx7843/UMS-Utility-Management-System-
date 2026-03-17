@@ -42,9 +42,9 @@ $complaints = $pdo->query($sql)->fetchAll();
             font-size: 0.85rem;
             font-weight: 600;
         }
-        .status-pending { background: #ffd43b; color: #1c1c1e; }
-        .status-resolved { background: #51cf66; color: #1c1c1e; }
-        .status-in-progress { background: #74c0fc; color: #1c1c1e; }
+        .status-pending { background: #cccccc; color: #000000; }
+        .status-resolved { background: #ffffff; color: #000000; }
+        .status-in-progress { background: #ffffff; color: #000000; border: 1px solid #ffffff; }
         
         .complaint-card {
             background: rgba(28, 28, 30, 0.6);
@@ -73,7 +73,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                     <div class="complaint-header">
                         <div>
                             <h3><?php echo htmlspecialchars($c['subject']); ?></h3>
-                            <p style="color: #999; margin: 5px 0;">
+                            <p style="color: #999999; margin: 5px 0;">
                                 Customer: <?php echo htmlspecialchars($c['full_name']); ?><br>
                                 Date: <?php echo htmlspecialchars($c['created_at']); ?>
                             </p>
@@ -83,14 +83,14 @@ $complaints = $pdo->query($sql)->fetchAll();
                         </span>
                     </div>
                     
-                    <p style="color: #ccc; margin: 15px 0;">
+                    <p style="color: #cccccc; margin: 15px 0;">
                         <?php echo nl2br(htmlspecialchars($c['description'])); ?>
                     </p>
                     
                     <?php if ($c['response']): ?>
-                        <div style="margin-top: 15px; padding: 15px; background: rgba(116, 192, 252, 0.1); border-left: 3px solid #74c0fc; border-radius: 4px;">
-                            <strong style="color: #74c0fc;">Response:</strong>
-                            <p style="margin: 10px 0; color: #ccc;"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
+                        <div style="margin-top: 15px; padding: 15px; background: rgba(255, 255, 255, 0.1); border-left: 3px solid #ffffff; border-radius: 4px;">
+                            <strong style="color: #ffffff;">Response:</strong>
+                            <p style="margin: 10px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
                         </div>
                     <?php endif; ?>
                     
@@ -116,7 +116,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p style="text-align: center; padding: 40px; color: #999;">No complaints found.</p>
+            <p style="text-align: center; padding: 40px; color: #999999;">No complaints found.</p>
         <?php endif; ?>
     </div>
 </body>

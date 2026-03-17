@@ -15,7 +15,7 @@ $staff = $pdo->query($staffSql)->fetchAll();
         <h2>Staff Directory</h2>
         <div class="grid" style="grid-template-columns: 1fr;">
             <table boarder="1" style="width:100%; border-collapse:collapse; color:white; border-color:white;">
-                <tr style="background:#333;">
+                <tr style="background:#333; color: white;">
                     <th style="padding:10px;">Job Title</th>
                     <th style="padding:10px;">Name</th>
                     <th style="padding:10px;">Username</th>

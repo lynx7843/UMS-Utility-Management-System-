@@ -67,16 +67,17 @@ if ($cust) {
             text-transform: uppercase;
         }
         .status-pending {
-            background: #ffd43b;
-            color: #1c1c1e;
+            background: #cccccc;
+            color: #000000;
         }
         .status-resolved {
-            background: #51cf66;
-            color: #1c1c1e;
+            background: #ffffff;
+            color: #000000;
         }
         .status-in-progress {
-            background: #74c0fc;
-            color: #1c1c1e;
+            background: #ffffff;
+            color: #000000;
+            border: 1px solid #ffffff;
         }
         .complaint-card {
             background: rgba(28, 28, 30, 0.6);
@@ -94,9 +95,10 @@ if ($cust) {
         .complaint-subject {
             font-weight: 600;
             font-size: 1.1rem;
+            color: #000000;
         }
         .complaint-date {
-            color: #999;
+            color: #999999;
             font-size: 0.85rem;
         }
     </style>
@@ -151,11 +153,11 @@ if ($cust) {
                                 <?php echo htmlspecialchars($complaint['status']); ?>
                             </span>
                         </div>
-                        <p style="margin: 10px 0; color: #ccc;"><?php echo nl2br(htmlspecialchars($complaint['description'])); ?></p>
+                        <p style="margin: 10px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($complaint['description'])); ?></p>
                         <?php if (!empty($complaint['response'])): ?>
                             <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">
-                                <strong style="color: #74c0fc;">Response:</strong>
-                                <p style="margin: 5px 0; color: #ccc;"><?php echo nl2br(htmlspecialchars($complaint['response'])); ?></p>
+                                <strong style="color: #ffffff;">Response:</strong>
+                                <p style="margin: 5px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($complaint['response'])); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>

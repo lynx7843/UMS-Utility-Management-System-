@@ -86,14 +86,14 @@ if ($cust) {
                 <strong>Balance Status:</strong> 
                 <?php 
                 if ($balance > 0) {
-                    echo "<span style='color:#ff6b6b; font-weight:bold;'>Outstanding: Rs. " . number_format($balance, 2) . "</span>";
+                    echo "<span style='color:#ffffff; font-weight:bold;'>Outstanding: Rs. " . number_format($balance, 2) . "</span>";
                     if ($days_overdue > 0) {
-                        echo "<br><small style='color:#999;'>(" . $days_overdue . " days overdue)</small>";
+                        echo "<br><small style='color:#cccccc;'>(" . $days_overdue . " days overdue)</small>";
                     }
                 } elseif ($balance < 0) {
-                    echo "<span style='color:#51cf66; font-weight:bold;'>Credit: Rs. " . number_format(abs($balance), 2) . "</span>";
+                    echo "<span style='color:#ffffff; font-weight:bold;'>Credit: Rs. " . number_format(abs($balance), 2) . "</span>";
                 } else {
-                    echo "<span style='color:#74c0fc; font-weight:bold;'>Settled (Rs. 0.00)</span>";
+                    echo "<span style='color:#ffffff; font-weight:bold;'>Settled (Rs. 0.00)</span>";
                 }
                 ?>
             </p>
@@ -106,7 +106,7 @@ if ($cust) {
         <?php if($readings): ?>
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                 <thead>
-                    <tr style="background: #3a3a3c; border-bottom: 2px solid var(--border);">
+                    <tr style="background: #3a3a3c; border-bottom: 2px solid var(--border); color: white;">
                         <th style="padding: 15px; text-align: left; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Date</th>
                         <th style="padding: 15px; text-align: left; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Utility</th>
                         <th style="padding: 15px; text-align: right; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Units Used</th>

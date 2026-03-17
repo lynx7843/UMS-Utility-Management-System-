@@ -54,7 +54,7 @@ $utilities = $pdo->query($sql)->fetchAll();
 
         <div style="margin-top:30px; color:white; padding:10px;">
             <table style="width:100%; border-collapse:collapse; color:white;">
-                <tr style="background:#333;color: solid white;">
+                <tr style="background:#333;color: white;">
                     <th style="padding:15px; text-align:left;">Utility ID</th>
                     <th style="padding:15px; text-align:left;">Utility Type</th>
                     <th style="padding:15px; text-align:right;">Unit Rate (LKR)</th>
@@ -103,12 +103,12 @@ $utilities = $pdo->query($sql)->fetchAll();
         </div>
 
       
-        <div style="margin-top:30px; padding:15px; border:1px solid #666; background:#1a1a1a;">
-            <h4 style="margin-top:0; color:#4CAF50;">About Utility Rates</h4>
+        <div style="margin-top:30px; padding:15px; border:1px solid #666; background:#1a1a1a; color: white;">
+            <h4 style="margin-top:0; color:#ffffff;">About Utility Rates</h4>
             <p style="margin:5px 0;">• <strong>Electricity:</strong> Rate per kilowatt-hour (kWh)</p>
             <p style="margin:5px 0;">• <strong>Water:</strong> Rate per cubic meter (m³)</p>
             <p style="margin:5px 0;">• <strong>Gas:</strong> Rate per unit consumed</p>
-            <p style="margin:10px 0 0 0; color:#ff9999; font-size:0.9rem;">
+            <p style="margin:10px 0 0 0; color:#cccccc; font-size:0.9rem;">
                 ⚠️ Note: Changing these rates will affect all future billing calculations.
             </p>
         </div>

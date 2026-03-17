@@ -2,7 +2,7 @@
     --bg: #1c1c1e;
     --fg: #f5f5f7;
     --border: #3a3a3c;
-    --accent: #0a84ff; 
+    --accent: #ffffff; 
 }
 
 body {
@@ -63,7 +63,7 @@ nav a {
 }
 
 nav a:hover {
-    border-bottom: 2px solid var(--accent);
+    border-bottom: 2px solid var(--fg);
 }
 
 h1, h3 {
@@ -80,9 +80,10 @@ form {
     padding: 40px;
     width: 100%;
     max-width: 450px;
-    background: rgba(28, 28, 30, 0.75);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #000000;
 }
 
 .form-group {
@@ -95,14 +96,14 @@ label {
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--fg);
+    color: #000000;
 }
 
 input, select, textarea {
     width: 100%;
     padding: 12px;
-    background: rgba(28, 28, 30, 0.5);
-    color: var(--fg);
+    background: rgba(255, 255, 255, 0.5);
+    color: #000000;
     border: 1px solid var(--border);
     border-radius: 8px;
     outline: none;
@@ -111,15 +112,20 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-    background: rgba(10, 132, 255, 0.15);
+    background: rgba(255, 255, 255, 0.15);
     border-color: var(--accent);
+}
+
+input::placeholder, select::placeholder, textarea::placeholder {
+    color: #666;
+    opacity: 1;
 }
 
 .btn {
     width: 100%;
     padding: 15px;
     background: var(--accent);
-    color: var(--fg);
+    color: #000000;
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -127,13 +133,13 @@ input:focus, select:focus, textarea:focus {
     font-weight: 700;
     font-size: 1rem;
     transition: background 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 12px rgba(10, 132, 255, 0.5);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
 }
 
 .btn:hover {
-    background: #0060df;
-    color: var(--fg);
-    box-shadow: 0 6px 16px rgba(10, 132, 255, 0.8);
+    background: #f0f0f0;
+    color: #000000;
+    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.8);
 }
 
 .toggle-container {
@@ -153,7 +159,7 @@ input:focus, select:focus, textarea:focus {
     font-weight: 600;
     border: none;
     background: transparent;
-    color: var(--fg);
+    color: #000000;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
@@ -173,8 +179,9 @@ input:focus, select:focus, textarea:focus {
     border: 1px solid var(--border);
     padding: 20px;
     text-align: center;
-    background: rgba(28, 28, 30, 0.6);
+    background: rgba(255, 255, 255, 0.6);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    color: #000000;
 }
 
 .card .big-text {
