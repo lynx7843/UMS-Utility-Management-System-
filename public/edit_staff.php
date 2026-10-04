@@ -99,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Edit Staff</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
 <div class="container">
@@ -113,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
     <?php endif; ?>
 
-    <form method="POST" style="margin-top:30px; color: solid white; padding:20px;">
+    <form method="POST" style="margin-top:30px; color: solid var(--fg); padding:20px;">
         <div style="margin-bottom:20px;">
             <label for="full_name">Full Name *</label>
             <input type="text" id="full_name" name="full_name" value="<?php echo htmlspecialchars($staff['full_name']); ?>" required>
@@ -127,22 +128,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div style="margin-bottom:20px;">
             <label for="role">Role *</label>
             <select id="role" name="role" required style="height:45px;">
-                <option value="customer" <?php if (strtolower($staff['role']) === 'customer') echo 'selected'; ?> style="background-color: #2a2a2c; color: #ffffff;">Customer</option>
-                <option value="field_officer" <?php if (strtolower($staff['role']) === 'field_officer') echo 'selected'; ?> style="background-color: #2a2a2c; color: #ffffff;">Field Officer</option>
-                <option value="cashier" <?php if (strtolower($staff['role']) === 'cashier') echo 'selected'; ?> style="background-color: #2a2a2c; color: #ffffff;">Cashier</option>
-                <option value="manager" <?php if (strtolower($staff['role']) === 'manager') echo 'selected'; ?> style="background-color: #2a2a2c; color: #ffffff;">Manager</option>                
+                <option value="customer" <?php if (strtolower($staff['role']) === 'customer') echo 'selected'; ?> style="background-color: var(--option-bg); color: var(--fg);">Customer</option>
+                <option value="field_officer" <?php if (strtolower($staff['role']) === 'field_officer') echo 'selected'; ?> style="background-color: var(--option-bg); color: var(--fg);">Field Officer</option>
+                <option value="cashier" <?php if (strtolower($staff['role']) === 'cashier') echo 'selected'; ?> style="background-color: var(--option-bg); color: var(--fg);">Cashier</option>
+                <option value="manager" <?php if (strtolower($staff['role']) === 'manager') echo 'selected'; ?> style="background-color: var(--option-bg); color: var(--fg);">Manager</option>                
             </select>
         </div>
 
         <div style="margin-bottom:20px;">
             <label for="password">New Password (leave blank to keep current)</label>
             <input type="password" id="password" name="password" placeholder="Enter new password or leave blank">
-            <small style="display:block; margin-top:5px; color:#aaa;">Only fill this if you want to change the password</small>
+            <small style="display:block; margin-top:5px; color:var(--muted);">Only fill this if you want to change the password</small>
         </div>
 
         <div style="display:flex; gap:10px; margin-top:30px;">
             <button type="submit" class="btn">Save Changes</button>
-            <a href="staff.php" class="btn" style="background-color:#666; text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
+            <a href="staff.php" class="btn" style="background-color:var(--btn-alt); text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
         </div>
     </form>
 </div>

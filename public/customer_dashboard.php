@@ -67,6 +67,7 @@ if ($cust) {
 <head>
     <title>My Dashboard</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
@@ -86,14 +87,14 @@ if ($cust) {
                 <strong>Balance Status:</strong> 
                 <?php 
                 if ($balance > 0) {
-                    echo "<span style='color:#ffffff; font-weight:bold;'>Outstanding: Rs. " . number_format($balance, 2) . "</span>";
+                    echo "<span style='color:var(--fg); font-weight:bold;'>Outstanding: Rs. " . number_format($balance, 2) . "</span>";
                     if ($days_overdue > 0) {
-                        echo "<br><small style='color:#cccccc;'>(" . $days_overdue . " days overdue)</small>";
+                        echo "<br><small style='color:var(--soft);'>(" . $days_overdue . " days overdue)</small>";
                     }
                 } elseif ($balance < 0) {
-                    echo "<span style='color:#ffffff; font-weight:bold;'>Credit: Rs. " . number_format(abs($balance), 2) . "</span>";
+                    echo "<span style='color:var(--fg); font-weight:bold;'>Credit: Rs. " . number_format(abs($balance), 2) . "</span>";
                 } else {
-                    echo "<span style='color:#ffffff; font-weight:bold;'>Settled (Rs. 0.00)</span>";
+                    echo "<span style='color:var(--fg); font-weight:bold;'>Settled (Rs. 0.00)</span>";
                 }
                 ?>
             </p>
@@ -106,7 +107,7 @@ if ($cust) {
         <?php if($readings): ?>
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                 <thead>
-                    <tr style="background: #3a3a3c; border-bottom: 2px solid var(--border); color: white;">
+                    <tr style="background: var(--head-bg); border-bottom: 2px solid var(--border); color: var(--fg);">
                         <th style="padding: 15px; text-align: left; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Date</th>
                         <th style="padding: 15px; text-align: left; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Utility</th>
                         <th style="padding: 15px; text-align: right; text-transform: uppercase; font-weight: 600; letter-spacing: 1px;">Units Used</th>

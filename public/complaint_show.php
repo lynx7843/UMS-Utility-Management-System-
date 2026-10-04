@@ -34,6 +34,7 @@ $complaints = $pdo->query($sql)->fetchAll();
 <head>
     <title>All Complaints</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
     <style>
         .status-badge {
             display: inline-block;
@@ -42,12 +43,12 @@ $complaints = $pdo->query($sql)->fetchAll();
             font-size: 0.85rem;
             font-weight: 600;
         }
-        .status-pending { background: #cccccc; color: #000000; }
-        .status-resolved { background: #ffffff; color: #000000; }
-        .status-in-progress { background: #000000; color: #ffffff; border: 1px solid #ffffff; }
+        .status-pending { background: var(--soft); color: var(--bg); }
+        .status-resolved { background: var(--fg); color: var(--bg); }
+        .status-in-progress { background: var(--bg); color: var(--fg); border: 1px solid var(--fg); }
         
         .complaint-card {
-            background: #111111;
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 20px;
@@ -73,7 +74,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                     <div class="complaint-header">
                         <div>
                             <h3><?php echo htmlspecialchars($c['subject']); ?></h3>
-                            <p style="color: #999999; margin: 5px 0;">
+                            <p style="color: var(--muted); margin: 5px 0;">
                                 Customer: <?php echo htmlspecialchars($c['full_name']); ?><br>
                                 Date: <?php echo htmlspecialchars($c['created_at']); ?>
                             </p>
@@ -83,14 +84,14 @@ $complaints = $pdo->query($sql)->fetchAll();
                         </span>
                     </div>
                     
-                    <p style="color: #cccccc; margin: 15px 0;">
+                    <p style="color: var(--soft); margin: 15px 0;">
                         <?php echo nl2br(htmlspecialchars($c['description'])); ?>
                     </p>
                     
                     <?php if ($c['response']): ?>
-                        <div style="margin-top: 15px; padding: 15px; background: #111111; border-left: 3px solid #ffffff; border-radius: 4px;">
-                            <strong style="color: #ffffff;">Response:</strong>
-                            <p style="margin: 10px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
+                        <div style="margin-top: 15px; padding: 15px; background: var(--surface); border-left: 3px solid var(--fg); border-radius: 4px;">
+                            <strong style="color: var(--fg);">Response:</strong>
+                            <p style="margin: 10px 0; color: var(--soft);"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
                         </div>
                     <?php endif; ?>
                     
@@ -100,9 +101,9 @@ $complaints = $pdo->query($sql)->fetchAll();
                         <div class="form-group">
                             <label>Status</label>
                             <select name="status" required>
-                                <option value="Pending" style="background-color: #2a2a2c; color: #ffffff;" <?php echo $c['status'] == 'Pending' ? 'selected' : ''; ?>>Pending</option>
-                                <option value="In Progress" style="background-color: #2a2a2c; color: #ffffff;" <?php echo $c['status'] == 'In Progress' ? 'selected' : ''; ?>>In Progress</option>
-                                <option value="Resolved" style="background-color: #2a2a2c; color: #ffffff;" <?php echo $c['status'] == 'Resolved' ? 'selected' : ''; ?>>Resolved</option>
+                                <option value="Pending" style="background-color: var(--option-bg); color: var(--fg);" <?php echo $c['status'] == 'Pending' ? 'selected' : ''; ?>>Pending</option>
+                                <option value="In Progress" style="background-color: var(--option-bg); color: var(--fg);" <?php echo $c['status'] == 'In Progress' ? 'selected' : ''; ?>>In Progress</option>
+                                <option value="Resolved" style="background-color: var(--option-bg); color: var(--fg);" <?php echo $c['status'] == 'Resolved' ? 'selected' : ''; ?>>Resolved</option>
                             </select>
                         </div>
                         
@@ -116,7 +117,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                 </div>
             <?php endforeach; ?>
         <?php else: ?>
-            <p style="text-align: center; padding: 40px; color: #999999;">No complaints found.</p>
+            <p style="text-align: center; padding: 40px; color: var(--muted);">No complaints found.</p>
         <?php endif; ?>
     </div>
 </body>

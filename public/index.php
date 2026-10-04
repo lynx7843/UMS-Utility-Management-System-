@@ -38,7 +38,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Login</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head><title>Login</title><link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script></head>
 <body>
     <div class="center-box">
         <h1>Utility System</h1>

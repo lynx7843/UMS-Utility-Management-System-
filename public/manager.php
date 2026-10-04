@@ -48,7 +48,8 @@ $total_collected = $pdo->query("
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Manager</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head><title>Manager</title><link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script></head>
 <body>
     <div class="container">
         <?php include __DIR__ . '/../src/partials/nav.php'; ?>

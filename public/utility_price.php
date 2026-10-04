@@ -38,6 +38,7 @@ $utilities = $pdo->query($sql)->fetchAll();
 <head>
     <title>Utility Pricing</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
@@ -52,9 +53,9 @@ $utilities = $pdo->query($sql)->fetchAll();
             <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
         <?php endif; ?>
 
-        <div style="margin-top:30px; color:white; padding:10px;">
-            <table style="width:100%; border-collapse:collapse; color:white;">
-                <tr style="background:#333;color: white;">
+        <div style="margin-top:30px; color:var(--fg); padding:10px;">
+            <table style="width:100%; border-collapse:collapse; color:var(--fg);">
+                <tr style="background:var(--head-bg);color: var(--fg);">
                     <th style="padding:15px; text-align:left;">Utility ID</th>
                     <th style="padding:15px; text-align:left;">Utility Type</th>
                     <th style="padding:15px; text-align:right;">Unit Rate (LKR)</th>
@@ -80,14 +81,14 @@ $utilities = $pdo->query($sql)->fetchAll();
             </table>
         </div>
 
-               <div id="editModal" style="display:none; margin-top:30px; border:1px solid white; padding:20px;">
+               <div id="editModal" style="display:none; margin-top:30px; border:1px solid var(--fg); padding:20px;">
             <h3 style="margin-top:0;">Update Utility Rate</h3>
             <form method="POST">
                 <input type="hidden" name="utility_id" id="edit_utility_id">
                 
                 <div style="margin-bottom:20px;">
                     <label>Utility Type</label>
-                    <input type="text" id="edit_type_name" disabled style="background-color:#555; cursor:not-allowed;">
+                    <input type="text" id="edit_type_name" disabled style="background-color:var(--disabled); cursor:not-allowed;">
                 </div>
 
                 <div style="margin-bottom:20px;">
@@ -97,18 +98,18 @@ $utilities = $pdo->query($sql)->fetchAll();
 
                 <div style="display:flex; gap:10px;">
                     <button type="submit" name="update_rate" class="btn">Save Changes</button>
-                    <button type="button" onclick="hideEditForm()" class="btn" style="background-color:#666;">Cancel</button>
+                    <button type="button" onclick="hideEditForm()" class="btn" style="background-color:var(--btn-alt);">Cancel</button>
                 </div>
             </form>
         </div>
 
       
-        <div style="margin-top:30px; padding:15px; border:1px solid #666; background:#1a1a1a; color: white;">
-            <h4 style="margin-top:0; color:#ffffff;">About Utility Rates</h4>
+        <div style="margin-top:30px; padding:15px; border:1px solid var(--btn-alt); background:var(--surface); color: var(--fg);">
+            <h4 style="margin-top:0; color:var(--fg);">About Utility Rates</h4>
             <p style="margin:5px 0;">• <strong>Electricity:</strong> Rate per kilowatt-hour (kWh)</p>
             <p style="margin:5px 0;">• <strong>Water:</strong> Rate per cubic meter (m³)</p>
             <p style="margin:5px 0;">• <strong>Gas:</strong> Rate per unit consumed</p>
-            <p style="margin:10px 0 0 0; color:#cccccc; font-size:0.9rem;">
+            <p style="margin:10px 0 0 0; color:var(--soft); font-size:0.9rem;">
                 ⚠️ Note: Changing these rates will affect all future billing calculations.
             </p>
         </div>
