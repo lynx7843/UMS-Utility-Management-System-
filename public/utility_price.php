@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 $role = $_SESSION['role'] ?? '';
 if (strtolower($role) !== 'manager' && strtolower($role) !== 'admin') {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -37,11 +37,11 @@ $utilities = $pdo->query($sql)->fetchAll();
 <html>
 <head>
     <title>Utility Pricing</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Utility Pricing Management</h2>
 
         <?php if (!empty($error)): ?>

@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 try {
     $stmt = $pdo->query("SELECT 1");

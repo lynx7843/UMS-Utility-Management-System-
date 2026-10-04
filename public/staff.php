@@ -1,17 +1,17 @@
 <?php
 session_start();
-require_once 'db.php';
-if ($_SESSION['role'] != 'manager' && $_SESSION['role'] != 'admin') { header("Location: login.php"); exit; }
+require_once __DIR__ . '/../src/config/db.php';
+if ($_SESSION['role'] != 'manager' && $_SESSION['role'] != 'admin') { header("Location: index.php"); exit; }
 
 $staffSql = "SELECT user_id, full_name, role, username FROM Users WHERE role != 'customer' ORDER BY role";
 $staff = $pdo->query($staffSql)->fetchAll();
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Staff List</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Staff List</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Staff Directory</h2>
         <div class="grid" style="grid-template-columns: 1fr;">
             <table boarder="1" style="width:100%; border-collapse:collapse; color:white; border-color:white;">

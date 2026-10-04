@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'db.php';
-if ($_SESSION['role'] != 'manager') { header("Location: login.php"); exit; }
+require_once __DIR__ . '/../src/config/db.php';
+if ($_SESSION['role'] != 'manager') { header("Location: index.php"); exit; }
 
 $users = $pdo->query("SELECT COUNT(*) FROM Users")->fetchColumn();
 $readings = $pdo->query("SELECT COUNT(*) FROM MeterReadings")->fetchColumn();
@@ -48,10 +48,10 @@ $total_collected = $pdo->query("
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Manager</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Manager</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Overview</h2>
         <div class="grid">
             <div class="card"><h3>Users</h3><div class="big-text"><?php echo $users; ?></div></div>

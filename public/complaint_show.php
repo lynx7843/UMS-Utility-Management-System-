@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 
 if (!isset($_SESSION['role']) || ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'manager')) { 
-    header("Location: login.php"); 
+    header("Location: index.php"); 
     exit; 
 }
 
@@ -33,7 +33,7 @@ $complaints = $pdo->query($sql)->fetchAll();
 <html>
 <head>
     <title>All Complaints</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <style>
         .status-badge {
             display: inline-block;
@@ -63,7 +63,7 @@ $complaints = $pdo->query($sql)->fetchAll();
 </head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         
         <h1>All Complaints</h1>
 

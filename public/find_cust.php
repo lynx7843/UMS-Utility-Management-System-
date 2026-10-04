@@ -1,10 +1,10 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 $role = $_SESSION['role'] ?? '';
 if (strtolower($role) !== 'cashier') {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -58,10 +58,10 @@ if (isset($_GET['search'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Find Customer</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Find Customer</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Find Customer Details</h2>
         
         <form method="GET" style="margin-bottom:30px;color: solid white; padding:20px;">

@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 if (!isset($_SESSION['role']) || ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'manager')) {
-    header("Location: login.php"); exit;
+    header("Location: index.php"); exit;
 }
 
 $msg = "";
@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Admin</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Admin</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Register User</h2>
         <?php echo $msg; ?>
         <form method="POST">
