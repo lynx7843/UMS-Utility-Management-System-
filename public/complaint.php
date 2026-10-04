@@ -62,7 +62,7 @@ if ($cust) {
         .status-badge {
             display: inline-block;
             padding: 5px 12px;
-            border-radius: 15px;
+            border-radius: 0;
             font-size: 0.85rem;
             font-weight: 600;
             text-transform: uppercase;
@@ -79,7 +79,7 @@ if ($cust) {
         .complaint-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 0;
             padding: 15px;
             margin-bottom: 15px;
         }
@@ -161,7 +161,7 @@ if ($cust) {
                 <?php endforeach; ?>
             </div>
         <?php else: ?>
-            <div class="alert" style="margin-top: 20px; padding: 20px; text-align: center; border: 1px solid var(--border); border-radius: 8px;">
+            <div class="alert" style="margin-top: 20px; padding: 20px; text-align: center; border: 1px solid var(--border); border-radius: 0;">
                 <p>No complaints submitted yet.</p>
             </div>
         <?php endif; ?>

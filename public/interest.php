@@ -89,7 +89,7 @@ if ($applied_count > 0) {
         <?php endif; ?>
 
         
-        <div style="background:var(--surface); padding:20px; margin-bottom:20px; border-radius:8px; color: var(--fg);">
+        <div style="background:var(--surface); padding:20px; margin-bottom:20px; border-radius: 0; color: var(--fg);">
             <h3>Interest Rates</h3>
             <form method="POST">
                 <label>14 Days Rate (%): <input type="number" step="0.1" name="rate_14" value="<?php echo $rates['rate_14_days']; ?>" required></label>

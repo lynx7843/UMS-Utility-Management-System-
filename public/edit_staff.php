@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <div style="display:flex; gap:10px; margin-top:30px;">
             <button type="submit" class="btn">Save Changes</button>
-            <a href="staff.php" class="btn" style="background-color:var(--btn-alt); text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
+            <a href="staff.php" class="btn btn-secondary" style="text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
         </div>
     </form>
 </div>

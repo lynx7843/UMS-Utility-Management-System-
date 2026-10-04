@@ -63,6 +63,7 @@ if ($cust) {
 }
 ?>
 
+<!DOCTYPE html>
 <html>
 <head>
     <title>My Dashboard</title>
@@ -128,7 +129,7 @@ if ($cust) {
                 </tbody>
             </table>
         <?php else: ?>
-            <div class="alert" style="margin-top: 20px; padding: 20px; text-align: center; border: 1px solid var(--border); border-radius: 8px;">
+            <div class="alert" style="margin-top: 20px; padding: 20px; text-align: center; border: 1px solid var(--border); border-radius: 0;">
                 <p>No readings found.</p>
             </div>
         <?php endif; ?>

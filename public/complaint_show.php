@@ -39,7 +39,7 @@ $complaints = $pdo->query($sql)->fetchAll();
         .status-badge {
             display: inline-block;
             padding: 5px 12px;
-            border-radius: 15px;
+            border-radius: 0;
             font-size: 0.85rem;
             font-weight: 600;
         }
@@ -50,7 +50,7 @@ $complaints = $pdo->query($sql)->fetchAll();
         .complaint-card {
             background: var(--surface);
             border: 1px solid var(--border);
-            border-radius: 8px;
+            border-radius: 0;
             padding: 20px;
             margin-bottom: 20px;
         }
@@ -89,7 +89,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                     </p>
                     
                     <?php if ($c['response']): ?>
-                        <div style="margin-top: 15px; padding: 15px; background: var(--surface); border-left: 3px solid var(--fg); border-radius: 4px;">
+                        <div style="margin-top: 15px; padding: 15px; background: var(--surface); border-left: 3px solid var(--fg); border-radius: 0;">
                             <strong style="color: var(--fg);">Response:</strong>
                             <p style="margin: 10px 0; color: var(--soft);"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
                         </div>
