@@ -44,10 +44,10 @@ $complaints = $pdo->query($sql)->fetchAll();
         }
         .status-pending { background: #cccccc; color: #000000; }
         .status-resolved { background: #ffffff; color: #000000; }
-        .status-in-progress { background: #ffffff; color: #000000; border: 1px solid #ffffff; }
+        .status-in-progress { background: #000000; color: #ffffff; border: 1px solid #ffffff; }
         
         .complaint-card {
-            background: rgba(28, 28, 30, 0.6);
+            background: #111111;
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 20px;
@@ -88,7 +88,7 @@ $complaints = $pdo->query($sql)->fetchAll();
                     </p>
                     
                     <?php if ($c['response']): ?>
-                        <div style="margin-top: 15px; padding: 15px; background: rgba(255, 255, 255, 0.1); border-left: 3px solid #ffffff; border-radius: 4px;">
+                        <div style="margin-top: 15px; padding: 15px; background: #111111; border-left: 3px solid #ffffff; border-radius: 4px;">
                             <strong style="color: #ffffff;">Response:</strong>
                             <p style="margin: 10px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($c['response'])); ?></p>
                         </div>

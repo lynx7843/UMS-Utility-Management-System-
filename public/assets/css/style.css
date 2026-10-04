@@ -1,8 +1,10 @@
 :root {
-    --bg: #1c1c1e;
-    --fg: #f5f5f7;
-    --border: #3a3a3c;
-    --accent: #ffffff; 
+    --bg: #000000;
+    --fg: #ffffff;
+    --border: #444444;
+    --muted: #999999;
+    --surface: #111111;
+    --accent: #ffffff;
 }
 
 body {
@@ -80,10 +82,8 @@ form {
     padding: 40px;
     width: 100%;
     max-width: 450px;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    color: #000000;
+    background: var(--surface);
+    color: var(--fg);
 }
 
 .form-group {
@@ -96,14 +96,14 @@ label {
     text-transform: uppercase;
     font-size: 0.85rem;
     font-weight: 600;
-    color: #000000;
+    color: var(--fg);
 }
 
 input, select, textarea {
     width: 100%;
     padding: 12px;
-    background: rgba(255, 255, 255, 0.5);
-    color: #000000;
+    background: var(--bg);
+    color: var(--fg);
     border: 1px solid var(--border);
     border-radius: 8px;
     outline: none;
@@ -112,12 +112,12 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-    background: rgba(255, 255, 255, 0.15);
+    background: var(--bg);
     border-color: var(--accent);
 }
 
 input::placeholder, select::placeholder, textarea::placeholder {
-    color: #666;
+    color: var(--muted);
     opacity: 1;
 }
 
@@ -133,13 +133,11 @@ input::placeholder, select::placeholder, textarea::placeholder {
     font-weight: 700;
     font-size: 1rem;
     transition: background 0.3s ease, color 0.3s ease;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
 }
 
 .btn:hover {
-    background: #f0f0f0;
+    background: #cccccc;
     color: #000000;
-    box-shadow: 0 6px 16px rgba(255, 255, 255, 0.8);
 }
 
 .toggle-container {
@@ -159,13 +157,13 @@ input::placeholder, select::placeholder, textarea::placeholder {
     font-weight: 600;
     border: none;
     background: transparent;
-    color: #000000;
+    color: var(--fg);
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 .toggle-btn.active {
     background: var(--accent);
-    color: var(--bg);
+    color: #000000;
 }
 
 .grid {
@@ -179,9 +177,8 @@ input::placeholder, select::placeholder, textarea::placeholder {
     border: 1px solid var(--border);
     padding: 20px;
     text-align: center;
-    background: rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    color: #000000;
+    background: var(--surface);
+    color: var(--fg);
 }
 
 .card .big-text {
@@ -202,12 +199,11 @@ input::placeholder, select::placeholder, textarea::placeholder {
 
 .alert.success {
     background: var(--fg);
-    color: var(--bg);
-    box-shadow: 0 0 10px var(--accent);
+    color: #000000;
 }
 
 .alert.error {
-    border-color: #ff453a;
-    color: #ff453a;
-    box-shadow: 0 0 10px #ff453a;
+    border: 2px solid var(--fg);
+    background: var(--bg);
+    color: var(--fg);
 }
