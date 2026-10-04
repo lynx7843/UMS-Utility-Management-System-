@@ -11,8 +11,8 @@
     <a href="#-features">Features</a> •
     <a href="#-tech-stack">Tech Stacks</a> •
     <a href="#-initial-setup">Initial SetUp</a> •
-    <a href="#-screenshots">Screenshots</a> •
     <a href="#-contributors">Contributors</a> •
+    <a href="#-demo">Demo</a> •
   </h4>
 </div>
 
@@ -56,36 +56,14 @@ Managing utility bills and accounting can be complex. UMS simplifies this by off
 	localhost/UMS-Utility-Management-System-/public/
 
 
-## 📷 Screenshots
-
-| Login | Customer Dashboard |
-|-------|-----------|
-| ![](docs/screenshots/1.png) | ![](docs/screenshots/2.png) |
-
-| Manager Dashboard | Cashier Dashboard |
-|-------------|---------|
-| ![](docs/screenshots/3.png) | ![](docs/screenshots/4.png) |
-
-| Field Officer Dashboard | Admin Dashboard |
-|-------------|---------|
-| ![](docs/screenshots/5.png) | ![](docs/screenshots/6.png) |
-
-| Interest Management Menu | Complaint Creation Menu |
-|-------------|---------|
-| ![](docs/screenshots/7.png) | ![](docs/screenshots/8.png) |
-
-| Price Management Menu | View Complaint Menu |
-|-------------|---------|
-| ![](docs/screenshots/9.png) | ![](docs/screenshots/10.png) |
-
-| Staff List Menu | Customer List Menu |
-|-------------|---------|
-| ![](docs/screenshots/11.png) | ![](docs/screenshots/12.png) |
-
-
 ## 🤝 Contributors
 
 - [Samitha Kahawita](https://github.com/kdsmaduranga) - Database Configuration
 - [Dilan Amantha](https://github.com/lynx7843) - Frontend
 - [tmadulanjaya](https://github.com/tmadulanjaya) - Database Designing
+
+
+## 🎬 Demo
+
+![UMS demo](docs/brag-demo.gif)
 
