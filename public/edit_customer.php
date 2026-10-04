@@ -99,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <title>Edit Customer</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
 <div class="container">
@@ -113,10 +114,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="alert success"><?php echo htmlspecialchars($success); ?></div>
     <?php endif; ?>
 
-    <form method="POST" style="margin-top:30px; color: solid white; padding:20px;">
+    <form method="POST" style="margin-top:30px; color: solid var(--fg); padding:20px;">
         <div style="margin-bottom:20px;">
             <label>Account Number (Read-only)</label>
-            <input type="text" value="<?php echo htmlspecialchars($customer['account_number']); ?>" disabled style="background-color:#555; cursor:not-allowed;">
+            <input type="text" value="<?php echo htmlspecialchars($customer['account_number']); ?>" disabled style="background-color:var(--disabled); cursor:not-allowed;">
         </div>
 
         <div style="margin-bottom:20px;">
@@ -142,12 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div style="margin-bottom:20px;">
             <label for="password">New Password (leave blank to keep current)</label>
             <input type="password" id="password" name="password" placeholder="Enter new password or leave blank">
-            <small style="display:block; margin-top:5px; color:#aaa;">Only fill this if you want to change the password</small>
+            <small style="display:block; margin-top:5px; color:var(--muted);">Only fill this if you want to change the password</small>
         </div>
 
         <div style="display:flex; gap:10px; margin-top:30px;">
             <button type="submit" class="btn">Save Changes</button>
-            <a href="cust_list.php" class="btn" style="background-color:#666; text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
+            <a href="cust_list.php" class="btn" style="background-color:var(--btn-alt); text-decoration:none; display:inline-block; text-align:center;">Cancel</a>
         </div>
     </form>
 </div>

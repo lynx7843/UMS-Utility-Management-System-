@@ -76,6 +76,7 @@ if ($applied_count > 0) {
 <head>
     <title>Interest Management</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
@@ -88,7 +89,7 @@ if ($applied_count > 0) {
         <?php endif; ?>
 
         
-        <div style="background:#1a1a1a; padding:20px; margin-bottom:20px; border-radius:8px; color: white;">
+        <div style="background:var(--surface); padding:20px; margin-bottom:20px; border-radius:8px; color: var(--fg);">
             <h3>Interest Rates</h3>
             <form method="POST">
                 <label>14 Days Rate (%): <input type="number" step="0.1" name="rate_14" value="<?php echo $rates['rate_14_days']; ?>" required></label>
@@ -126,10 +127,10 @@ if ($applied_count > 0) {
                 <td><?php echo number_format($c['balance'], 2); ?></td>
                 <td><?php echo $days; ?> days</td>
                 <td><?php echo $rate; ?>%</td>
-                <td style="color:#ffffff;"><?php echo number_format($interest, 2); ?></td>
+                <td style="color:var(--fg);"><?php echo number_format($interest, 2); ?></td>
                 <td><strong><?php echo number_format($total, 2); ?></strong></td>
                 <td>
-                    <span style="color:#999;">Auto Applied</span>
+                    <span style="color:var(--muted);">Auto Applied</span>
                 </td>
             </tr>
             <?php endforeach; ?>

@@ -42,7 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Admin</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head><title>Admin</title><link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script></head>
 <body>
     <div class="container">
         <?php include __DIR__ . '/../src/partials/nav.php'; ?>
@@ -52,10 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <label>Role</label>
                 <select name="role" id="role" onchange="toggleFields()">
-                    <option value="customer" style="background-color: #2a2a2c; color: #ffffff;">Customer</option>
-                    <option value="field_officer" style="background-color: #2a2a2c; color: #ffffff;">Field Officer</option>
-                    <option value="cashier" style="background-color: #2a2a2c; color: #ffffff;">Cashier</option>
-                    <option value="manager" style="background-color: #2a2a2c; color: #ffffff;">Manager</option>
+                    <option value="customer" style="background-color: var(--option-bg); color: var(--fg);">Customer</option>
+                    <option value="field_officer" style="background-color: var(--option-bg); color: var(--fg);">Field Officer</option>
+                    <option value="cashier" style="background-color: var(--option-bg); color: var(--fg);">Cashier</option>
+                    <option value="manager" style="background-color: var(--option-bg); color: var(--fg);">Manager</option>
                 </select>
             </div>
             <div class="form-group"><label>Full Name</label><input type="text" name="full_name" required></div>

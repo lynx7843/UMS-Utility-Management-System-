@@ -53,6 +53,7 @@ $readings = $pdo->query($readingsSql)->fetchAll();
 <head>
     <title>Readings</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
@@ -63,8 +64,8 @@ $readings = $pdo->query($readingsSql)->fetchAll();
             <div class="form-group"><label>Account #</label><input type="text" name="account_number" required></div>
             <div class="form-group">
                 <label>Utility Type</label>
-                <select name="utility_id" style="background-color: #2a2a2c; color: #ffffff;">
-                    <?php foreach($utils as $u) echo "<option value='{$u['utility_id']}' style='background-color: #2a2a2c; color: #ffffff;'>{$u['type_name']}</option>"; ?>
+                <select name="utility_id" style="background-color: var(--option-bg); color: var(--fg);">
+                    <?php foreach($utils as $u) echo "<option value='{$u['utility_id']}' style='background-color: var(--option-bg); color: var(--fg);'>{$u['type_name']}</option>"; ?>
                 </select>
             </div>
             <div class="form-group"><label>Previous Reading</label><input type="number" step="0.01" name="previous" required></div>

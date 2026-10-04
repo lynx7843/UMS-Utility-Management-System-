@@ -27,7 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Cashier</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head><title>Cashier</title><link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script></head>
 <body>
     <div class="container">
         <?php include __DIR__ . '/../src/partials/nav.php'; ?>
@@ -42,8 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="form-group">
                 <label>Payment Method</label>
                 <select name="method">
-                    <option style="background-color: #2a2a2c; color: #ffffff;">Cash</option>
-                    <option style="background-color: #2a2a2c; color: #ffffff;">Card</option>
+                    <option style="background-color: var(--option-bg); color: var(--fg);">Cash</option>
+                    <option style="background-color: var(--option-bg); color: var(--fg);">Card</option>
                 </select>
             </div>
             <button class="btn">Process Payment</button>

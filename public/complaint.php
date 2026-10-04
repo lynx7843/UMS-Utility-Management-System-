@@ -57,6 +57,7 @@ if ($cust) {
 <head>
     <title>My Complaints</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
     <style>
         .status-badge {
             display: inline-block;
@@ -67,18 +68,16 @@ if ($cust) {
             text-transform: uppercase;
         }
         .status-pending {
-            background: #cccccc;
-            color: #000000;
+            background: var(--soft); color: var(--bg);
         }
         .status-resolved {
-            background: #ffffff;
-            color: #000000;
+            background: var(--fg); color: var(--bg);
         }
         .status-in-progress {
-            background: #000000; color: #ffffff; border: 1px solid #ffffff;
+            background: var(--bg); color: var(--fg); border: 1px solid var(--fg);
         }
         .complaint-card {
-            background: #111111;
+            background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 15px;
@@ -93,10 +92,10 @@ if ($cust) {
         .complaint-subject {
             font-weight: 600;
             font-size: 1.1rem;
-            color: #ffffff;
+            color: var(--fg);
         }
         .complaint-date {
-            color: #999999;
+            color: var(--muted);
             font-size: 0.85rem;
         }
     </style>
@@ -151,11 +150,11 @@ if ($cust) {
                                 <?php echo htmlspecialchars($complaint['status']); ?>
                             </span>
                         </div>
-                        <p style="margin: 10px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($complaint['description'])); ?></p>
+                        <p style="margin: 10px 0; color: var(--soft);"><?php echo nl2br(htmlspecialchars($complaint['description'])); ?></p>
                         <?php if (!empty($complaint['response'])): ?>
                             <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid var(--border);">
-                                <strong style="color: #ffffff;">Response:</strong>
-                                <p style="margin: 5px 0; color: #cccccc;"><?php echo nl2br(htmlspecialchars($complaint['response'])); ?></p>
+                                <strong style="color: var(--fg);">Response:</strong>
+                                <p style="margin: 5px 0; color: var(--soft);"><?php echo nl2br(htmlspecialchars($complaint['response'])); ?></p>
                             </div>
                         <?php endif; ?>
                     </div>

@@ -35,19 +35,20 @@ $customers = $pdo->query($custSql)->fetchAll();
 <head>
     <title>Customer Report</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script>
 </head>
 <body>
     <div class="container">
         <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Customer Financial Report</h2>
         
-        <div style="margin-bottom:20px; padding:10px; background:#1a1a1a; color: white;">
+        <div style="margin-bottom:20px; padding:10px; background:var(--surface); color: var(--fg);">
             <strong>Total Customers :</strong> <?php echo count($customers); ?>
         </div>
 
         <div class="grid" style="grid-template-columns: 1fr;">
-            <table  style="width:100%; border-collapse:collapse; color:white;">
-                <tr style="background:#333333;">
+            <table  style="width:100%; border-collapse:collapse; color:var(--fg);">
+                <tr style="background:var(--head-bg);">
                     <th style="padding:10px;">Account #</th>
                     <th style="padding:10px;">Customer Name</th>
                     <th style="padding:10px;">Phone</th>
@@ -64,16 +65,16 @@ $customers = $pdo->query($custSql)->fetchAll();
                     <td style="padding:10px; font-weight:bold;">
                         <?php 
                         if ($c['balance'] > 0) {
-                            echo "<span style='color:#ffffff'>OUTSTANDING: " . number_format($c['balance'], 2) . "</span>";
+                            echo "<span style='color:var(--fg)'>OUTSTANDING: " . number_format($c['balance'], 2) . "</span>";
                         } elseif ($c['balance'] < 0) {
-                            echo "<span style='color:#ffffff'>EXCEEDING: " . number_format(abs($c['balance']), 2) . "</span>";
+                            echo "<span style='color:var(--fg)'>EXCEEDING: " . number_format(abs($c['balance']), 2) . "</span>";
                         } else {
-                            echo "<span style='color:#ffffff'>Settled (0.00)</span>";
+                            echo "<span style='color:var(--fg)'>Settled (0.00)</span>";
                         }
                         ?>
                     </td>
                     <td >
-                        <a href="edit_customer.php?account_number=<?php echo htmlspecialchars($c['account_number']); ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;color:white;padding:5px 10px; border-radius:5px;" >Edit</a>
+                        <a href="edit_customer.php?account_number=<?php echo htmlspecialchars($c['account_number']); ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;color:var(--fg);padding:5px 10px; border-radius:5px;" >Edit</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

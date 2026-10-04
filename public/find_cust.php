@@ -58,21 +58,22 @@ if (isset($_GET['search'])) {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Find Customer</title><link rel="stylesheet" href="assets/css/style.css"></head>
+<head><title>Find Customer</title><link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/theme.js"></script></head>
 <body>
     <div class="container">
         <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Find Customer Details</h2>
         
-        <form method="GET" style="margin-bottom:30px;color: solid white; padding:20px;">
+        <form method="GET" style="margin-bottom:30px;color: solid var(--fg); padding:20px;">
             <div style="display:flex; gap:10px; align-items:flex-end;">
                 <div style="flex:1;">
                     <label>Search By</label>
                     <select name="criteria" style="height:45px;">
-                        <option value="name" style="background-color: #2a2a2c; color: #ffffff;"<?php if($criteria=='name') echo 'selected'; ?>>Customer Name</option>
-                        <option value="address" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='address') echo 'selected'; ?>>Address</option>
-                        <option value="phone" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='phone') echo 'selected'; ?>>Phone Number</option>
-                        <option value="account" style="background-color: #2a2a2c; color: #ffffff;" <?php if($criteria=='account') echo 'selected'; ?>>Account Number</option>
+                        <option value="name" style="background-color: var(--option-bg); color: var(--fg);"<?php if($criteria=='name') echo 'selected'; ?>>Customer Name</option>
+                        <option value="address" style="background-color: var(--option-bg); color: var(--fg);" <?php if($criteria=='address') echo 'selected'; ?>>Address</option>
+                        <option value="phone" style="background-color: var(--option-bg); color: var(--fg);" <?php if($criteria=='phone') echo 'selected'; ?>>Phone Number</option>
+                        <option value="account" style="background-color: var(--option-bg); color: var(--fg);" <?php if($criteria=='account') echo 'selected'; ?>>Account Number</option>
                     </select>
                 </div>
                 <div style="flex:2;">
@@ -87,8 +88,8 @@ if (isset($_GET['search'])) {
 
         <?php if(!empty($results)): ?>
             <h3>Search Results</h3>
-            <div style=" color: white; padding:10px;">
-                <div style="display:grid; background:#333; grid-template-columns:1fr 1fr 1fr 1fr 120px; color: white; font-weight:bold; padding:5px;">
+            <div style=" color: var(--fg); padding:10px;">
+                <div style="display:grid; background:var(--head-bg); grid-template-columns:1fr 1fr 1fr 1fr 120px; color: var(--fg); font-weight:bold; padding:5px;">
                     <div>Name</div>
                     <div>Account #</div>
                     <div>Address / Phone</div>
@@ -96,7 +97,7 @@ if (isset($_GET['search'])) {
                     <div>Action</div>
                 </div>
                 <?php foreach($results as $row): ?>
-                <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 120px; padding:10px; border-bottom:1px solid #333; align-items:center;">
+                <div style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr 120px; padding:10px; border-bottom:1px solid var(--head-bg); align-items:center;">
                     <div><?php echo htmlspecialchars($row['full_name']); ?></div>
                     <div><?php echo htmlspecialchars($row['account_number']); ?></div>
                     <div style="font-size:0.85rem;">
@@ -106,9 +107,9 @@ if (isset($_GET['search'])) {
                     <div style="font-weight:bold;">
                         <?php 
                         if ($row['balance'] > 0) {
-                            echo "<span style='color:#ffffff'>Outstanding: " . number_format($row['balance'], 2) . "</span>";
+                            echo "<span style='color:var(--fg)'>Outstanding: " . number_format($row['balance'], 2) . "</span>";
                         } elseif ($row['balance'] < 0) {
-                            echo "<span style='color:#ffffff'>Exceeding: " . number_format(abs($row['balance']), 2) . "</span>";
+                            echo "<span style='color:var(--fg)'>Exceeding: " . number_format(abs($row['balance']), 2) . "</span>";
                         } else {
                             echo "Settled";
                         }
