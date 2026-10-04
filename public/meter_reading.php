@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
-if (strtolower($_SESSION['role']) != 'field_officer') { header("Location: login.php"); exit; }
+if (strtolower($_SESSION['role']) != 'field_officer') { header("Location: index.php"); exit; }
 
 $msg = "";
 $utils = $pdo->query("SELECT * FROM UtilityTypes")->fetchAll();
@@ -52,11 +52,11 @@ $readings = $pdo->query($readingsSql)->fetchAll();
 <html>
 <head>
     <title>Readings</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Add Meter Reading</h2>
         <?php echo $msg; ?>
         <form method="POST">
@@ -88,7 +88,7 @@ $readings = $pdo->query($readingsSql)->fetchAll();
             const utilityId = utilityIdSelect.value;
 
             if (accountNumber && utilityId) {
-                fetch(`get_previous_reading.php?account_number=${accountNumber}&utility_id=${utilityId}`)
+                fetch(`api/get_previous_reading.php?account_number=${accountNumber}&utility_id=${utilityId}`)
                     .then(response => response.json())
                     .then(data => {
                         if (data.previous_reading !== undefined) {

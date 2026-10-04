@@ -1,8 +1,8 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
-if ($_SESSION['role'] != 'cashier') { header("Location: login.php"); exit; }
+if ($_SESSION['role'] != 'cashier') { header("Location: index.php"); exit; }
 $msg = "";
 
 $prefillAcc = $_GET['acc'] ?? '';
@@ -27,10 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Cashier</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Cashier</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         <h2>Record Payment</h2>
         <?php echo $msg; ?>
         <form method="POST">

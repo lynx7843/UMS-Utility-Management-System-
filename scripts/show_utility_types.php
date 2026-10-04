@@ -1,5 +1,5 @@
 <?php
-$serverName = "DILAN\SQLEXPRESS";
+$serverName = "(localdb)\MSSQLLocalDB";
 $database = "UtilitySys_New";
 $uid = "";
 $pwd = "";

@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 if (!isset($_SESSION['role']) || $_SESSION['role'] != 'customer') { 
-    header("Location: login.php"); 
+    header("Location: index.php"); 
     exit; 
 }
 
@@ -66,11 +66,11 @@ if ($cust) {
 <html>
 <head>
     <title>My Dashboard</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         
         <h1>Welcome, <?php echo htmlspecialchars($cust['full_name'] ?? 'User'); ?></h1>
         

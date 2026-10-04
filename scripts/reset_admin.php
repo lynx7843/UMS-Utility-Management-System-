@@ -1,6 +1,6 @@
 <?php
 // reset_admin.php
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 $username = 'admin';
 $password = 'admin123'; // This is the password we are setting
@@ -27,7 +27,7 @@ try {
     echo "<li><strong>Password:</strong> admin123</li>";
     echo "<li><strong>Role:</strong> admin</li>";
     echo "</ul>";
-    echo "<p><a href='login.php'>Go to Login Page</a> (Select 'Staff' toggle)</p>";
+    echo "<p><a href='../public/index.php'>Go to Login Page</a> (Select 'Staff' toggle)</p>";
 
 } catch (PDOException $e) {
     echo "<h1>Error</h1>";

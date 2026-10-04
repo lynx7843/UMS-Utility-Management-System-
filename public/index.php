@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 ?>
 <!DOCTYPE html>
 <html>
-<head><title>Login</title><link rel="stylesheet" href="style.css"></head>
+<head><title>Login</title><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
     <div class="center-box">
         <h1>Utility System</h1>

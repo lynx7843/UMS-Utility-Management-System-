@@ -1,9 +1,9 @@
 <?php
 session_start();
-require_once 'db.php';
+require_once __DIR__ . '/../src/config/db.php';
 
 if ($_SESSION['role'] != 'admin' && $_SESSION['role'] != 'manager') {
-    header("Location: login.php");
+    header("Location: index.php");
     exit;
 }
 
@@ -75,11 +75,11 @@ if ($applied_count > 0) {
 <html>
 <head>
     <title>Interest Management</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container">
-        <?php include 'nav.php'; ?>
+        <?php include __DIR__ . '/../src/partials/nav.php'; ?>
         
         <h2>Interest Management</h2>
 

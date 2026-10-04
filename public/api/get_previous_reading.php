@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php';
+require_once __DIR__ . '/../../src/config/db.php';
 
 if (isset($_GET['account_number']) && isset($_GET['utility_id'])) {
     $account_number = $_GET['account_number'];
