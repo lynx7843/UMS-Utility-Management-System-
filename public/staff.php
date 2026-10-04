@@ -28,7 +28,7 @@ $staff = $pdo->query($staffSql)->fetchAll();
                     <td style="padding:10px;"><?php echo $s['full_name']; ?></td>
                     <td style="padding:10px;"><?php echo $s['username']; ?></td>
                     <td style="padding:10px;">
-                        <a href="edit_staff.php?id=<?php echo $s['user_id']; ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;color:var(--fg);padding:5px 10px; border-radius:5px;">Edit</a>
+                        <a href="edit_staff.php?id=<?php echo $s['user_id']; ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;padding:5px 10px; border-radius: 0;">Edit</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

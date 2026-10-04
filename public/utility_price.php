@@ -98,7 +98,7 @@ $utilities = $pdo->query($sql)->fetchAll();
 
                 <div style="display:flex; gap:10px;">
                     <button type="submit" name="update_rate" class="btn">Save Changes</button>
-                    <button type="button" onclick="hideEditForm()" class="btn" style="background-color:var(--btn-alt);">Cancel</button>
+                    <button type="button" onclick="hideEditForm()" class="btn btn-secondary">Cancel</button>
                 </div>
             </form>
         </div>

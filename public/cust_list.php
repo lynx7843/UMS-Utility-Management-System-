@@ -74,7 +74,7 @@ $customers = $pdo->query($custSql)->fetchAll();
                         ?>
                     </td>
                     <td >
-                        <a href="edit_customer.php?account_number=<?php echo htmlspecialchars($c['account_number']); ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;color:var(--fg);padding:5px 10px; border-radius:5px;" >Edit</a>
+                        <a href="edit_customer.php?account_number=<?php echo htmlspecialchars($c['account_number']); ?>" class="btn" style="text-decoration:none; display:inline-block; text-align:center;padding:5px 10px; border-radius: 0;" >Edit</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
