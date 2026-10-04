@@ -75,12 +75,10 @@ if ($cust) {
             color: #000000;
         }
         .status-in-progress {
-            background: #ffffff;
-            color: #000000;
-            border: 1px solid #ffffff;
+            background: #000000; color: #ffffff; border: 1px solid #ffffff;
         }
         .complaint-card {
-            background: rgba(28, 28, 30, 0.6);
+            background: #111111;
             border: 1px solid var(--border);
             border-radius: 8px;
             padding: 15px;
@@ -95,7 +93,7 @@ if ($cust) {
         .complaint-subject {
             font-weight: 600;
             font-size: 1.1rem;
-            color: #000000;
+            color: #ffffff;
         }
         .complaint-date {
             color: #999999;
